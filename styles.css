@@ -1,13 +1,19 @@
 :root {
-  --bg: #f4efe3;
-  --bg-soft: #fbf8f1;
-  --surface: rgba(255, 255, 255, 0.9);
-  --ink: #171410;
-  --muted: #5a5348;
-  --line: rgba(128, 101, 42, 0.18);
-  --gold: #b9882e;
-  --gold-soft: #f1e0b5;
-  --shadow: 0 18px 45px rgba(80, 60, 15, 0.08);
+  --bg: #f7f4ee;
+  --bg-soft: #fcfaf6;
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-strong: #ffffff;
+  --surface-soft: #f4e8c9;
+  --ink: #111111;
+  --muted: #4e4a43;
+  --line: rgba(216, 201, 166, 0.9);
+  --gold: #b68a2f;
+  --gold-soft: #f3e7c4;
+  --accent: #8f6a22;
+  --accent-soft: #ead9ae;
+  --success: #6f5420;
+  --warm: #c79a3b;
+  --shadow: 0 20px 48px rgba(111, 84, 32, 0.11);
   --radius-xl: 30px;
   --radius-lg: 22px;
   --max-width: 1180px;
@@ -28,9 +34,9 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(241, 224, 181, 0.8), transparent 28%),
-    radial-gradient(circle at 100% 10%, rgba(185, 136, 46, 0.16), transparent 18%),
-    linear-gradient(180deg, #f8f3e8 0%, #fffdf8 100%);
+    radial-gradient(circle at top left, rgba(243, 231, 196, 0.95), transparent 26%),
+    radial-gradient(circle at 100% 10%, rgba(234, 217, 174, 0.58), transparent 20%),
+    linear-gradient(180deg, var(--bg) 0%, #fffdfa 100%);
 }
 
 a {
@@ -60,28 +66,33 @@ a {
 
 .hero {
   position: relative;
-  padding: 32px 0 12px;
+  padding: 28px 0 12px;
 }
 
 .hero__backdrop {
   position: absolute;
-  inset: 12px 0 auto;
-  height: 460px;
+  inset: 10px 0 0;
   border: 1px solid var(--line);
   border-radius: 36px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(249, 241, 220, 0.9)),
-    linear-gradient(115deg, rgba(185, 136, 46, 0.12), transparent 40%);
+    radial-gradient(circle at top left, rgba(243, 231, 196, 0.92), transparent 34%),
+    radial-gradient(circle at right center, rgba(234, 217, 174, 0.82), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 245, 233, 0.94));
   box-shadow: var(--shadow);
 }
 
 .hero__content {
   position: relative;
   display: grid;
-  gap: 28px;
-  grid-template-columns: minmax(0, 1.25fr) minmax(290px, 0.75fr);
-  align-items: center;
-  padding: 56px 40px 24px;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  align-items: start;
+  padding: 48px 40px 34px;
+}
+
+.hero__intro {
+  min-width: 0;
+  padding-right: 8px;
 }
 
 .eyebrow {
@@ -112,8 +123,9 @@ h4 {
 
 h1 {
   margin-top: 18px;
-  font-size: clamp(2.5rem, 5vw, 4.8rem);
-  max-width: 12ch;
+  font-size: clamp(2.9rem, 5.4vw, 4.9rem);
+  max-width: 9.8ch;
+  line-height: 0.96;
 }
 
 .hero__lede,
@@ -127,8 +139,8 @@ h1 {
 
 .hero__lede {
   margin: 20px 0 0;
-  max-width: 62ch;
-  font-size: 1.02rem;
+  max-width: 58ch;
+  font-size: 1.06rem;
 }
 
 .pill-row,
@@ -149,7 +161,7 @@ h1 {
   padding: 9px 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.98);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -178,13 +190,14 @@ h1 {
 }
 
 .button--primary {
-  background: linear-gradient(135deg, var(--gold), #c7983f);
+  background: linear-gradient(135deg, var(--gold), var(--warm));
   color: #fff;
+  box-shadow: 0 12px 26px rgba(182, 138, 47, 0.22);
 }
 
 .button--secondary {
   border-color: var(--line);
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .button--light {
@@ -231,7 +244,7 @@ h1 {
 }
 
 .summary-card--highlight {
-  background: linear-gradient(180deg, rgba(241, 224, 181, 0.75), rgba(255, 255, 255, 0.9));
+  background: linear-gradient(180deg, rgba(243, 231, 196, 0.88), rgba(255, 255, 255, 0.94));
 }
 
 .summary-list {
@@ -284,7 +297,7 @@ main.site-shell {
   width: 46px;
   height: 46px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(241, 224, 181, 0.95), rgba(255, 255, 255, 0.95));
+  background: linear-gradient(135deg, var(--surface-soft), rgba(255, 255, 255, 0.96));
   color: var(--gold);
   font-size: 1.3rem;
 }
@@ -330,8 +343,8 @@ main.site-shell {
 }
 
 .tab-button[aria-selected="true"] {
-  background: rgba(241, 224, 181, 0.48);
-  border-color: rgba(185, 136, 46, 0.45);
+  background: rgba(243, 231, 196, 0.72);
+  border-color: rgba(182, 138, 47, 0.55);
 }
 
 .tab-button__label {
@@ -392,7 +405,7 @@ main.site-shell {
   padding: 16px 16px 14px;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .prompt-card__label {
@@ -421,7 +434,7 @@ main.site-shell {
   padding: 0 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--surface-strong);
   font-size: 0.84rem;
   font-weight: 800;
   cursor: pointer;
@@ -472,7 +485,9 @@ main.site-shell {
   padding: 28px;
   border-color: transparent;
   color: #fff;
-  background: linear-gradient(135deg, #111111 0%, #8f6f2f 100%);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.14), transparent 26%),
+    linear-gradient(135deg, var(--ink) 0%, var(--accent) 100%);
 }
 
 .callout p {
@@ -514,11 +529,7 @@ main.site-shell {
   }
 
   .hero__content {
-    padding: 52px 24px 20px;
-  }
-
-  .hero__backdrop {
-    height: 100%;
+    padding: 42px 24px 28px;
   }
 }
 
@@ -532,7 +543,12 @@ main.site-shell {
   }
 
   .hero__content {
-    padding: 38px 16px 14px;
+    padding: 34px 16px 22px;
+  }
+
+  h1 {
+    max-width: none;
+    font-size: clamp(2.4rem, 12vw, 3.5rem);
   }
 
   .button {
