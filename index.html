@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor Virtual Académico PI2</title>
+    <meta
+      name="description"
+      content="Guía web para usar un tutor virtual académico en Práctica Integrada II."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <header class="site-shell hero">
+      <div class="hero__backdrop" aria-hidden="true"></div>
+      <div class="hero__content">
+        <div class="hero__intro">
+          <span class="eyebrow">Recurso académico interactivo</span>
+          <h1>Tutor virtual académico para Práctica Integrada II</h1>
+          <p class="hero__lede">
+            Una web de orientación para que el estudiante sepa qué pedir, cuándo usar
+            cada modalidad del tutor y cómo convertirlo en apoyo real para estudiar,
+            razonar casos y practicar desempeño clínico.
+          </p>
+
+          <div class="pill-row" id="hero-pills"></div>
+
+          <div class="hero__actions">
+            <a
+              class="button button--primary"
+              href="https://chatgpt.com/g/g-69c67e50543c81918b284221d1e1231e-tutor-pinte-2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Abrir tutor virtual
+            </a>
+            <a class="button button--secondary" href="#modos">Explorar funciones</a>
+          </div>
+        </div>
+
+        <aside class="hero__panel" aria-label="Resumen del recurso">
+          <div class="summary-card">
+            <h2>Qué encontrará el estudiante</h2>
+            <ul class="summary-list" id="summary-list"></ul>
+          </div>
+          <div class="summary-card summary-card--highlight">
+            <h2>Uso sugerido</h2>
+            <p>
+              Esta guía funciona mejor antes de actividades clave, en preparación de
+              entrevistas, y como puente entre contenido teórico y aplicación práctica.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main id="main-content" class="site-shell">
+      <section class="card-grid card-grid--overview" id="overview-cards"></section>
+
+      <section class="section-block" id="modos">
+        <div class="section-heading">
+          <span class="eyebrow">Modalidades de uso</span>
+          <h2>Cómo puede ayudar el tutor según la tarea académica</h2>
+          <p>
+            Cada modo describe propósito, forma de uso, ejemplos concretos y situaciones
+            donde conviene utilizarlo.
+          </p>
+        </div>
+
+        <div class="tab-layout">
+          <div
+            class="tab-list"
+            role="tablist"
+            aria-label="Funciones del tutor virtual"
+            id="tab-list"
+          ></div>
+          <article class="tab-panel" id="tab-panel" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="section-split">
+        <article class="section-card">
+          <div class="section-heading section-heading--compact">
+            <span class="eyebrow">Trayectoria de uso</span>
+            <h2>Momentos del semestre donde más aporta</h2>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </article>
+
+        <div class="stack">
+          <article class="section-card">
+            <div class="section-heading section-heading--compact">
+              <span class="eyebrow">Aprendizaje</span>
+              <h2>Resultados que apoya</h2>
+            </div>
+            <div class="mini-grid" id="outcomes"></div>
+          </article>
+
+          <article class="section-card">
+            <div class="section-heading section-heading--compact">
+              <span class="eyebrow">Aplicaciones</span>
+              <h2>Actividades donde resulta especialmente útil</h2>
+            </div>
+            <div class="mini-grid" id="utilities"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="callout">
+        <div>
+          <span class="eyebrow eyebrow--light">Mensaje clave</span>
+          <h2>Un apoyo guiado, no un reemplazo del juicio docente o clínico</h2>
+          <p>
+            El tutor está diseñado para acompañar estudio, análisis, simulación,
+            retroalimentación y mejora progresiva. Su valor aparece cuando el estudiante
+            lo usa con intención, criterio y objetivos concretos.
+          </p>
+        </div>
+        <div class="callout__actions">
+          <a
+            class="button button--light"
+            href="https://chatgpt.com/g/g-69c67e50543c81918b284221d1e1231e-tutor-pinte-2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ir al tutor
+          </a>
+          <a class="button button--ghost-light" href="#modos">Ver funciones</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer site-shell">
+      <p>
+        Recurso académico para acompañar el uso guiado del tutor virtual en Práctica
+        Integrada II.
+      </p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
